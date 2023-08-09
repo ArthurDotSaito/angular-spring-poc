@@ -7,7 +7,9 @@ import { Course } from './model/course';
   styleUrls: ['./courses.component.css'],
 })
 export class CoursesComponent implements OnInit {
-  courses: Course[] = [];
+  courses: Course[] = [
+    { _id: '1', name: 'Programming', category: 'front-end' },
+  ];
   displayedColumns = ['name', 'category'];
 
   constructor() {}
