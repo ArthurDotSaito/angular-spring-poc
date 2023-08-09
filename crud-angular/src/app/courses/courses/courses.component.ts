@@ -1,3 +1,4 @@
+import { CoursesService } from './../services/courses.service';
 import { Component, OnInit } from '@angular/core';
 import { Course } from './model/course';
 
@@ -7,11 +8,11 @@ import { Course } from './model/course';
   styleUrls: ['./courses.component.css'],
 })
 export class CoursesComponent implements OnInit {
-  courses: Course[] = [
-    { _id: '1', name: 'Programming', category: 'front-end' },
-  ];
+  courses: Course[] = [];
   displayedColumns = ['name', 'category'];
 
-  constructor() {}
-  ngOnInit(): void {}
+  constructor(private readonly coursesService: CoursesService) {}
+  ngOnInit(): void {
+    this.courses = this.coursesService.findAll();
+  }
 }
