@@ -1,7 +1,7 @@
 import { CoursesService } from './../services/courses.service';
 import { Component, OnInit } from '@angular/core';
 import { Course } from './model/course';
-import { Observable } from 'rxjs';
+import { Observable, catchError, of } from 'rxjs';
 
 @Component({
   selector: 'app-courses',
@@ -13,7 +13,11 @@ export class CoursesComponent implements OnInit {
   displayedColumns = ['name', 'category'];
 
   constructor(private readonly coursesService: CoursesService) {
-    this.courses$ = this.coursesService.findAll();
+    this.courses$ = this.coursesService.findAll().pipe(
+      catchError((error) => {
+        return of([]);
+      })
+    );
   }
   ngOnInit(): void {}
 }
