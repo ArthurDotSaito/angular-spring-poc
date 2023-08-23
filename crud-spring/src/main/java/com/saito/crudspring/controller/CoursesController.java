@@ -1,17 +1,17 @@
 package com.saito.crudspring.controller;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/")
-public class HelloController {
+@RequestMapping("/api/courses")
+public class CoursesController {
 
     @GetMapping
-
-    public @ResponseBody String hello() {
-        return "Hello World";
+    public List<Object> list() {
+        return null;
     }
 }
