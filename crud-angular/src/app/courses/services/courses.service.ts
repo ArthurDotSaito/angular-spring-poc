@@ -8,7 +8,7 @@ import { take, tap } from 'rxjs';
   providedIn: 'root',
 })
 export class CoursesService {
-  private readonly API = 'api/courses';
+  private readonly API = '/api/courses';
   constructor(private readonly httpClient: HttpClient) {}
 
   findAll() {
