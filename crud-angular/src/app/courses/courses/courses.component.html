@@ -27,6 +27,16 @@
               <mat-icon>add</mat-icon>
             </button>
           </mat-header-cell>
+
+          <mat-cell *matCellDef="let course">
+            <button mat-icon-button color="accent" aria-label="Edit button">
+              <mat-icon>edit</mat-icon>
+            </button>
+
+            <button mat-icon-button color="warning" aria-label="Remove button">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </mat-cell>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
