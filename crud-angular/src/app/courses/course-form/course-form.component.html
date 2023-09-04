@@ -1,7 +1,15 @@
-<form [formGroup]="form">
-  <mat-form-field>
-    <input matInput placeholder="Name" formControlName="name" />
-    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-  </mat-form-field>
-</form>
->
+<mat-card>
+  <mat-toolbar color="primary">Course details</mat-toolbar>
+
+  <mat-card-content>
+    <form [formGroup]="form">
+      <mat-form-field>
+        <input matInput placeholder="Name" formControlName="name" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Category" formControlName="category" />
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+</mat-card>
