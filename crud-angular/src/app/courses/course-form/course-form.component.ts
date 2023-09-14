@@ -18,10 +18,10 @@ export class CourseFormComponent implements OnInit {
       category: [null],
     });
   }
-  ngOnInit(): void {
-    this.service.save(this.form.value);
-  }
+  ngOnInit(): void {}
 
-  onSubmit() {}
+  onSubmit() {
+    this.service.save(this.form.value).subscribe((res) => console.log(res));
+  }
   onCancel() {}
 }
